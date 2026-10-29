@@ -3,18 +3,23 @@
 int main(void)
 {
     int n;
-    long long i = 1;
-
-    scanf("%d", &n);
-
-    while (n > 0)
+    while (1)
     {
-        long long cube = i * i * i;
-        printf("%lld ", cube);
-        i++;
-        n--;
-    }
-    printf("\n");
+        if (scanf("%d", &n) != 1 || n <= 0)
+        {
+            break;
+        }
 
+        double sum = 0.0;
+        double term = 1.0;
+
+        for (int i = 1; i <= n; i++)
+        {
+            term *= 2.0;
+            sum += term;
+        }
+
+        printf("SUM: %.6f\n", sum);
+    }
     return 0;
 }

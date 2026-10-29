@@ -1,20 +1,15 @@
 #include <stdio.h>
+#include <math.h>
 
-double day_to_yr(double day)
-{
-    const double days_in_year = 365.0;
-    return day / days_in_year;
+double calc(double a, double b) {
+    return cos(a - b) + sin(a + b);
 }
 
-int main(void)
-{
-    double day;
-
-    while (scanf("%lf", &day) == 1)
-    {
-        double yr = day_to_yr(day);
-        printf("%.2f\n", yr);
+int main(void) {
+    double a, b;
+    while (scanf("%lf %lf", &a, &b) == 2) {
+        double res = calc(a, b);
+        printf("%.4f\n", res);
     }
-
     return 0;
 }

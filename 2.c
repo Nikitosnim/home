@@ -1,17 +1,16 @@
 #include <stdio.h>
-#include <stdint.h>
 
-int main(void)
-{
-    int16_t v1, v2, t;
+#define HEIGHT 5
 
-    scanf("%hd %hd %hd", &v1, &v2, &t);
-
-    float result = (float)(v2 - v1) / t;
-
-    printf("Result: %f\n", result);
-    printf("sizeof(int16_t): %llu\n", (unsigned long long)sizeof(int16_t));
-    printf("sizeof(float): %llu\n", (unsigned long long)sizeof(float));
-
+int main(void) {
+    for (int i = 0; i < HEIGHT; i++) {
+        for (int j = 0; j < HEIGHT - 1 - i; j++) {
+            printf(" ");
+        }
+        for (int k = 0; k < HEIGHT; k++) {
+            printf("+");
+        }
+        printf("\n");
+    }
     return 0;
 }
